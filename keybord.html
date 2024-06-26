@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: aqua;
+        box-sizing: border-box;
+    }
+    
+    .conteiner {
+        background: linear-gradient(to right, rgb(216, 219, 218), rgba(5, 0, 0, 0.959));
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+    }
+    
+    .keybord {
+        padding: 20px;
+        background-color: rgb(132, 134, 134);
+        box-shadow: -5px -5px 15px rgba(192, 192, 192, 0.322), 5px 5px 15px black;
+        border-radius: 10px;
+    }
+    
+    .keybord form input:active {
+        box-shadow: -2px -2px 5px rgba(255, 255, 255, 0.562), 2px 2px 5px rgb(0, 0, 0);
+    }
+    
+    .keybord form input {
+        width: 60px;
+        height: 50px;
+        margin: 10px;
+        color: white;
+        font-style: oblique;
+        font-size: 15px;
+        background-color: transparent;
+        box-shadow: -3px -1px 5px white, 7px 3px 3px black;
+        border: 0;
+        border-radius: 10px;
+        outline: 0;
+        cursor: pointer;
+    }
+    /* @media(min-aspect-ratio: 10 / 12) {
+        .keybord form input {
+            width: 40px;
+            height: 35px;
+            margin: 5px;
+            font-size: 15px;
+        }
+    }
+    
+    @media(min-aspect-ratio: 10 / 7) {
+        .keybord form input {
+            width: 70px;
+            height: 60px;
+            margin: 10px;
+            box-shadow: -5px -1px 7px white, 10px 5px 5px black;
+        }
+    }
+    
+    @media(min-aspect-ratio: 10 / 5) {
+        .keybord form input {
+            width: 80px;
+            height: 60px;
+            margin: 12px;
+            box-shadow: -5px -1px 7px white, 10px 5px 5px black;
+        }
+    }*/
+    
+    form input.inter {
+        width: 120px;
+    }
+    
+    form input.blank {
+        width: 450px;
+    }
+    
+    form input.xx {
+        width: 100px;
+        border-bottom-right-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    
+    form input.zz {
+        padding-left: 20px;
+    }
+    
+    form .display {
+        display: flex;
+        text-align: center;
+        justify-content: flex-end;
+        margin: 20px 0;
+        cursor: text;
+        border: none;
+    }
+    
+    form .display input {
+        flex: 1;
+        box-shadow: 0 0 10px rgb(133, 131, 131);
+        background-color: rgb(146, 150, 151);
+        font-size: 45px;
+        border-radius: 15px;
+    }
+    
+    .zz {
+        padding-left: 50px;
+    }
+    
+    .bottom {
+        padding-left: 60px;
+    }
+    
+    .aa {
+        padding-left: 20px;
+    }
+    
+    .xe {
+        color: brown;
+        width: 50px;
+        height: 50px;
+        margin-bottom: 40%;
+        box-shadow: 10px 10px 10px 10px blue, 0 0 10px black;
+    }
+    
+    .save {
+        display: inline;
+    }
+    
+    button {
+        width: 50px;
+        height: 40px;
+        margin: 10px;
+        color: white;
+        font-style: oblique;
+        font-size: 15px;
+        background-color: transparent;
+        box-shadow: -3px -1px 5px white, 7px 3px 3px black;
+        border: 0;
+        border-radius: 10px;
+        outline: 0;
+        cursor: pointer;
+    }
+    
+    .output {
+        bottom: 0;
+        width: 100px;
+        height: 50px;
+        font-size: 15px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    /*  let input1o = document.getElementById('input');alert( input1o.value )"*/
+</style>
+
+
+
+<body>
+    <div class="conteiner">
+        <div class="keybord">
+            <form>
+
+                <div class="display">
+                    <input type="text" id="input" name="display" class="display" placeholder="type ">
+                </div>
+                <div>
+                    <input type="button" value="Q" onclick="display.value += 'Q'">
+                    <input type="button" value="W" onclick="display.value += 'W'">
+                    <input type="button" value="E" onclick="display.value += 'E'">
+                    <input type="button" value="R" onclick="display.value += 'R'">
+                    <input type="button" value="T" onclick="display.value += 'T'">
+                    <input type="button" value="Y" onclick="display.value += 'Y'">
+                    <input type="button" value="U" onclick="display.value += 'U'">
+                    <input type="button" value="I" onclick="display.value += 'I'">
+                    <input type="button" value="O" onclick="display.value += 'O'">
+                    <input type="button" value="P" onclick="display.value += 'P'">
+
+                </div>
+                <div class="aa">
+                    <input type="button" value="A" onclick="display.value += 'A'">
+                    <input type="button" value="S" onclick="display.value += 'S'">
+                    <input type="button" value="D" onclick="display.value += 'D'">
+                    <input type="button" value="F" onclick="display.value += 'F'">
+                    <input type="button" value="G" onclick="display.value += 'G'">
+                    <input type="button" value="H" onclick="display.value += 'H'">
+                    <input type="button" value="J" onclick="display.value += 'J'">
+                    <input type="button" value="K" onclick="display.value += 'K'">
+                    <input type="button" value="L" onclick="display.value += 'L'">
+
+                </div>
+                <div class="zz">
+                    <input type="button" value="Z" onclick="display.value += 'Z'">
+                    <input type="button" value="X" onclick="display.value += 'X'">
+                    <input type="button" value="C" onclick="display.value += 'C'">
+                    <input type="button" value="V" onclick="display.value += 'V'">
+                    <input type="button" value="B" onclick="display.value += 'B'">
+                    <input type="button" value="N" onclick="display.value += 'N'">
+                    <input type="button" value="M" onclick="display.value += 'M'">
+                    <input type="button" class="xx" value="<=" onclick=" display.value = display.value.toString().slice(0,-1)">
+
+                </div>
+                <div class="bottom">
+                    <input type="button" value="||" onclick="display.value = ''">
+                    <input type="button" class="blank" value=" " onclick="display.value += '  '">
+                    <input type="button" class="inter" id="inter" value="=>" ondblclick="myfunction()"> </div>
+        </div>
+    </div>
+
+
+
+
+    </form>
+    </div>
+
+    </div>
+    <script>
+        function myfunction() {
+            let copyText = document.getElementById('input');
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+            alert("copied the text:" + copyText.value);
+        }
+    </script>
+</body>
+
+</html>
