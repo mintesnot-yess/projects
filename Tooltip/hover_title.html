@@ -1,0 +1,53 @@
+<style>
+  body {
+    margin: 0;
+    background: #657d97;
+  }
+
+  ul {
+    padding: 0;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  ul li {
+    width: 50px;
+    list-style: none;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.2s;
+    &:hover::after {
+      opacity: 1;
+      margin: 10px 0 0 10px;
+    }
+    &:hover {
+      opacity: 1;
+      scale: 1.05;
+    }
+  }
+
+  ul li::after {
+    content: attr(data-tile);
+    position: absolute;
+    margin: 10px 0 0 0;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 10px;
+    opacity: 0;
+    transition: all 0.2s;
+  }
+</style>
+
+<ul>
+  <li data-tile="home"><img src="img/house.svg" alt="" /></li>
+  <li data-tile="history"><img src="img/clock.svg" alt="" /></li>
+  <li data-tile="search"><img src="img/magnifying-glass.svg" alt="" /></li>
+</ul>

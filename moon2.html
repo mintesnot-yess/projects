@@ -1,0 +1,110 @@
+<html>
+<style>
+    body {
+        margin: 0;
+    }
+    
+    .sky {
+        width: 100%;
+        position: absolute;
+        height: 100vh;
+        background-color: rgb(0, 17, 28);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 10s;
+    }
+    
+    .sky:hover {
+        background-color: rgb(0, 0, 0);
+        transition: 10s;
+    }
+    
+    .sky:hover .moon {
+        transition: 5s;
+        width: 500px;
+        height: 500px;
+        box-shadow: 0 0 5px;
+        z-index: 2;
+    }
+    
+    .moon {
+        z-index: 0;
+        width: 200px;
+        transition: 1s;
+        height: 200px;
+        background: linear-gradient(to left, white, rgb(153, 153, 153));
+        border-radius: 50%;
+        box-shadow: 0 0 100px white;
+    }
+    
+    .submoon {
+        transition: 1s;
+        width: 30px;
+        height: 30px;
+        background: linear-gradient(to left, rgba(217, 217, 217, 0.793), rgba(241, 241, 241, 0.608));
+        border-radius: 50%;
+        margin: 100;
+    }
+    
+    .submoon1 {
+        width: 10px;
+        height: 10px;
+        background: linear-gradient(to left, rgba(156, 156, 156, 0.446), rgba(228, 228, 228, 0.479));
+        border-radius: 50%;
+        margin-top: -140;
+        margin-left: 70;
+    }
+    
+    .submoon3 {
+        width: 10px;
+        height: 10px;
+        background: linear-gradient(to left, rgba(156, 156, 156, 0.446), rgba(228, 228, 228, 0.479));
+        border-radius: 50%;
+        margin-top: -30;
+        margin-left: 50;
+    }
+    
+    .stars {
+        animation: star 5s infinite;
+        z-index: 1;
+        position: fixed;
+        box-shadow: 0 -20px 7px white;
+        width: 5px;
+        transform: rotate(50deg);
+        height: 10px;
+        background-color: aliceblue;
+        border-radius: 0 0 20px 20px;
+    }
+    
+    @keyframes star {
+        from {
+            top: -10%;
+            right: -10%;
+            box-shadow: 0 -30px 10px white;
+        }
+        to {
+            top: 200%;
+            right: 200%;
+            box-shadow: 0 -30px 7px white;
+        }
+    }
+</style>
+<html>
+
+<body>
+    <div class="sky">
+        <div class="moon">
+            <div class="submoon">
+            </div>
+            <div class="submoon1">
+            </div>
+            <div class="submoon3">
+            </div>
+        </div>
+    </div>
+    <div class="stars"></div>
+    </div>
+</body>
+
+</html>

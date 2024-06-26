@@ -1,0 +1,124 @@
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(#07dac8a6, red) 70%;
+    }
+    
+    .timeControl {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+    }
+    
+    .time {
+        width: fit-content;
+        height: 50px;
+        padding: 20px 0 30px;
+        text-align: center;
+        border-radius: 20px;
+        transform: perspective(200px) rotateX(30deg);
+        transition: .5s;
+        background: #07dac8a6;
+        border-bottom: solid 20px #ee2e2ed8;
+        box-shadow: 10px 5px 10px 0 rgba(0, 0, 0, 0.384);
+    }
+    
+    .time:hover {
+        background-color: #50505041;
+        transform: perspective(200px) rotatey(0)scale(1.5);
+        box-shadow: 0 0 0;
+        border-bottom: solid 0 rgba(70, 70, 70, 0.247);
+    }
+    
+    .time:hover span {
+        text-shadow: 0 0 0px;
+        color: black;
+    }
+    
+    .time span {
+        scale: 1;
+        text-shadow: 20px 5px 10px black;
+        transition: .5s;
+        font-size: 50px;
+        color: rgb(37, 65, 65);
+        padding: 10;
+        font-family: sans-serif;
+    }
+    
+    @keyframes pip {
+        0% {
+            color: #5e5e5e;
+        }
+        50% {
+            color: rgb(255, 255, 255);
+        }
+        100% {
+            color: #616161;
+        }
+    }
+    
+    .time #twoPoint {
+        animation: pip 1s infinite;
+        box-shadow: 0 0 0;
+    }
+    
+    .shine {
+        width: 500px;
+        height: 200px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: transparent;
+        filter: blur(120px);
+        z-index: 10;
+        box-shadow: 0 0 60px rgb(47, 140, 202);
+    }
+</style>
+
+<body>
+
+    <div class="timeControl">
+
+        <div class="time">
+            <span id="second">0</span><span id="twoPoint">:</span><span id="minute">0</span><span id="twoPoint">:</span><span id="time">0</span>
+        </div>
+        <div class="shine">
+            <div class="word"></div>
+        </div>
+
+</body>
+
+
+<script>
+    var second = document.getElementById('second');
+    var minute = document.getElementById('minute');
+    var time = document.getElementById('time');
+    var day = document.getElementById('day');
+    var secontCounter = 0;
+    var minuteCounter = 0;
+    var timeCounter = 0;
+    var dayCounter = 0;
+
+    function secondFun() {
+        secontCounter++;
+        second.innerHTML = secontCounter;
+        if (secontCounter == 59) {
+            secontCounter = 0;
+            minuteCounter++;
+            minute.innerHTML = minuteCounter;
+            if (minuteCounter == 59) {
+                minuteCounter = 0;
+                timeCounter++;
+                time.innerHTML = timeCounter;
+                if (timeCounter == 12) {
+                    timeCounter = 0;
+                    dayCounter++;
+                    day.innerHTML = dayCounter;
+                }
+            }
+        }
+    }
+    setInterval(secondFun, 1000)
+</script>
