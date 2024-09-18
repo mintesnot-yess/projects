@@ -124,10 +124,35 @@
                     color: #474141;
                 }
 
-                a {
+
+                &:hover {
+                    background: #dddddd;
+                }
+
+                &:active {
+                    background: #474747;
+
+                    i {
+                        color: #ffffff;
+                    }
+                }
+            }
+
+            a {
+                width: 50px;
+                height: 50px;
+                border: none;
+                border-radius: 5px;
+                box-shadow: 0 5px 10px #adadad;
+                cursor: pointer;
+                transition: all .3s;
+                text-decoration: none;
+
+                i {
                     font-size: 1.6rem;
                     color: #474141;
                 }
+
 
                 &:hover {
                     background: #dddddd;
@@ -295,12 +320,10 @@
             <button title="history" type="button" onclick="displayHistory()">
                 <i class="fa fa-clock" aria-hidden="true"></i>
             </button>
-            <button title="history" type="button" onclick="displayHistory()">
+            <a title="about me" href="https://github.com/mintesnot-yess/mintesnot-yess">
 
-                <a style="text-decoration: none;" href="https://github.com/mintesnot-yess/mintesnot-yess">
-                    <i class="fa fa-info" aria-hidden="true"></i>
-                </a>
-            </button>
+                <i class="fa fa-info" aria-hidden="true"></i>
+            </a>
 
 
 
