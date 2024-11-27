@@ -15,7 +15,7 @@
     />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
     <style>
-      * {
+    * {
     margin: 0;
     padding: 0;
     transition: all .4s;
@@ -25,6 +25,24 @@
     --max-width: 1200px;
     --prime-color: rgb(255, 162, 0);
     --secondary-color: #1e1d30;
+
+}
+
+@keyframes card-animation {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+
+    }
+
+}
+
+@keyframes hero-text-animation {
+    0% {
+        transform: translateY(-30%);
+        opacity: 0;
+        filter: blur(10px);
+    }
 
 }
 
@@ -170,6 +188,7 @@ nav {
             margin: 0 auto;
             max-width: var(--max-width);
             font-size: 5rem;
+            animation: hero-text-animation 1s;
 
         }
 
@@ -195,6 +214,7 @@ nav {
         font-size: 1.3rem;
         background-color: var(--prime-color);
         border: solid 1px var(--prime-color);
+        animation: hero-text-animation .5s;
 
     }
 
@@ -218,6 +238,7 @@ nav {
 }
 
 .card-container {
+
     text-align: center;
     padding: 50px 20px;
     margin: 50px auto;
@@ -227,6 +248,9 @@ nav {
         font-size: 2.3rem;
         color: #1a1a1a;
         padding: 10px;
+        animation: card-animation;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
     }
 
     p {
@@ -243,6 +267,7 @@ nav {
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
+
 }
 
 .service {
@@ -262,6 +287,9 @@ nav {
     border-radius: 50%;
     padding: 20px;
     margin: 0 auto;
+    animation: card-animation;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
 }
 
 .service h3 {
@@ -283,12 +311,14 @@ nav {
     background-color: #f8f9fa;
     gap: 20px;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
 
     .image-cont {
         flex: 1 250px;
         background: url('https://storage.googleapis.com/a1aa/image/GD8dhNPvn0akFlrcth2JfrGJ8VNjezuXJ5lr6RGYbh52SQ1TA.jpg') center/cover;
-
+        animation: card-animation;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
     }
 
     .text-section {
@@ -333,7 +363,7 @@ nav {
     justify-content: center;
     width: var(--max-width);
     max-width: 100%;
-    margin: 20px auto;
+    margin: 50px auto;
 
     .image {
         flex: 1;
@@ -343,6 +373,9 @@ nav {
         width: 100%;
         object-fit: cover;
         border-radius: 10px;
+        animation: card-animation;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
     }
 
     .content {
@@ -377,7 +410,7 @@ nav {
 
 .project-container {
     max-width: var(--max-width);
-    margin: 0 auto;
+    margin: 110px auto;
     padding: 20px 0;
 
     .header {
@@ -411,6 +444,9 @@ nav {
         height: 300px;
         object-fit: cover;
         border-radius: 10px;
+        animation: card-animation;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
     }
 
     .project p {
@@ -491,6 +527,151 @@ footer {
         }
     }
 
+}
+
+/* about page style */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    gap: 30px;
+
+    .about-header {
+        padding: 30px 20px;
+        background-color: #1e1d30;
+        height: 100px;
+        display: flex;
+        align-items: end;
+
+        h2 {
+            width: 1200px;
+            max-width: 100%;
+            margin: auto;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+    }
+
+    .image-container {
+        display: flex;
+        flex-direction: column;
+        height: 350px;
+        width: 1200px;
+        max-width: 100%;
+        margin: auto;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    }
+
+    .text-container {
+        width: 1000px;
+        max-width: 100%;
+        margin: auto;
+
+        h1 {
+            color: #3a3a3a;
+            margin: 10px 10px;
+            font: 500 1.7rem / 1.625rem "Open Sans", sans-serif;
+
+            line-height: 2.5rem;
+        }
+
+        p {
+            margin: 0 10px;
+            color: #53575a;
+            font: 400 1rem / 1.625rem "Open Sans", sans-serif;
+        }
+    }
+
+    .mission-vision-container {
+        width: 1200px;
+        max-width: 90%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px 0;
+        gap: 20px;
+
+        .service-box {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex: 1 300px;
+        }
+
+        .service-box .icon {
+            background-color: #6fcf97;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        .service-box .content {
+            max-width: 500px;
+        }
+
+        .service-box .content h3 {
+            margin: 0;
+            font: 500 1.7rem / 1.625rem "Open Sans", sans-serif;
+            color: #333333;
+        }
+
+        .service-box .content p {
+            margin: 5px 0 0 0;
+            font: 400 1rem / 1.625rem "Open Sans", sans-serif;
+
+            color: #646464;
+        }
+    }
+
+    .story-container {
+        width: 1200px;
+        max-width: 90%;
+        margin: auto;
+        padding: 20px 0;
+        gap: 30px;
+        display: flex;
+
+        .story-text {
+            padding: 20px;
+            background-color: #f7f9fd;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            margin: 0;
+            font: 500 2rem / 1.625rem "Open Sans", sans-serif;
+            color: #333333;
+        }
+
+        p {
+            margin: 0 10px;
+            font: 400 1rem / 1.625rem "Open Sans", sans-serif;
+            color: #646464;
+        }
+
+        img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    }
 }
 
 .footer-bottom {
